@@ -1,26 +1,12 @@
-import React from 'react';
+import { MessagesData } from '../../types/types';
 
 interface FeedItemProps {
-  users_name: string;
-  avatar: string;
-  date: string;
-  message: string;
-  is_favorite: boolean;
-  content_image: string;
-  is_new: boolean;
-  social_group: string;
+  data: MessagesData;
 }
 
-function FeedItem({
-  users_name,
-  avatar,
-  content_image,
-  date,
-  is_favorite,
-  is_new,
-  message,
-  social_group,
-}: FeedItemProps) {
+function FeedItem({data}: FeedItemProps) {
+  const {attachments, author, channel, content, date, region, id, senderNumber} = data;
+
   return (
     <>
       <li className='feed-item'>
@@ -28,13 +14,11 @@ function FeedItem({
           <div className='head-wrapper'>
             <div className='users-block'>
               <div className='user-avatar'>
-                <img src={avatar} alt='Фото профиля' />
+                <img src='#' alt='Фото профиля' />
               </div>
               <div className='name-block'>
-                <div className='users-name'>{users_name}</div>
-                {social_group && (
-                  <div className='social-group-name'>{social_group}</div>
-                )}
+                <div className='users-name'>{author}</div>
+                {channel && <div className='social-group-name'>{channel}</div>}
               </div>
             </div>
             <div className='control-block'>
@@ -50,23 +34,22 @@ function FeedItem({
             </div>
           </div>
           <div className='time-clock'>
-            <span className='time-text'>15:57</span>
+            <span className='time-text'>14:14</span>
           </div>
           <div className='content-block'>
             <div className='content-text'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-              necessitatibus! Nesciunt exercitationem voluptates vero cumque
-              inventore asperiores, minima architecto vitae iusto earum quo et
-              atque modi autem magnam ea error.
+              {content}
               <button>Далее</button>
             </div>
-            {content_image && <div className="content-image">
-                <img src={content_image} alt="Картинка из сообщения" />
-            </div>}
+            {attachments && (
+              <div className='content-image'>
+                <img src='#' alt='Картинка из сообщения' />
+              </div>
+            )}
           </div>
-          <div className="tags-block">
-            <span className="new-tag">#Новое</span>
-            <span className="expert-tag">#Эксперт</span>
+          <div className='tags-block'>
+            <span className='new-tag'>#Новое</span>
+            <span className='expert-tag'>#Эксперт</span>
           </div>
         </div>
       </li>
