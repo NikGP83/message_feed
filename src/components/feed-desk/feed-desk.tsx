@@ -19,7 +19,7 @@ function FeedDesk() {
   useEffect(() => {
     fetchData();
   }, []);
-
+  console.log(data)
   if (typeof data === 'undefined') {
     return null;
   }

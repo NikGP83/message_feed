@@ -8,6 +8,8 @@
   align-items: center;
   flex-direction: column;
   list-style: none;
+  padding-top: 15px;
+  padding-bottom: 5px;
 }
 .user-name {
   color: #808080;
@@ -17,7 +19,7 @@
 }
 .feed-item {
   width: 886px;
-  height: 315px;
+  min-height: 315px;
   padding: 10px;
   background-color: #ffffff;
   margin-bottom: 10px;
@@ -36,6 +38,7 @@
 .head-wrapper {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 4px;
 }
 
 .users-block {
@@ -74,4 +77,37 @@
 
 .icon-item {
   cursor: pointer;
+}
+
+.content-block {
+  display: flex;
+}
+
+.time-block {
+  margin-right: 10px;
+}
+
+.content-text {
+  margin-bottom: 10px;
+}
+
+.tags {
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 10px;
+  color: #cdcdcd;
+  margin-right: 8px;
+}
+
+.active-tag {
+  color: #0088ee;
+}
+
+.content-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 8px;
+    color: #808080;
 }

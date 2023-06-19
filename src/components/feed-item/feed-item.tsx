@@ -16,6 +16,10 @@ function FeedItem({ data }: FeedItemProps) {
     senderNumber,
   } = data;
 
+  const [mediaData] = attachments || [];
+
+  const is_new_message = true; 
+
   return (
     <>
       <li className='feed-item'>
@@ -32,7 +36,6 @@ function FeedItem({ data }: FeedItemProps) {
               </div>
               <div className='name-block'>
                 <span className='user-name'>{author}</span>
-                {channel && <div className='social-group-name'>{channel}</div>}
               </div>
             </div>
             <div className='control-block'>
@@ -127,22 +130,24 @@ function FeedItem({ data }: FeedItemProps) {
           </div>
 
           <div className='content-block'>
-          <div className='time-clock'>
-            <span className='time-text'>14:14</span>
-          </div>
-            <div className='content-text'>
-              {content}
-              <button>Далее</button>
+            <div className='time-block'>
+              <span className='time-text'>{new Date(date).getHours() + ':' + new Date(date).getMinutes()}</span>
             </div>
-            {attachments && (
-              <div className='content-image'>
-                <img src='#' alt='Картинка из сообщения' />
+            <div className='content-wrapper'>
+              <div className='content-text'>
+                {content}
               </div>
-            )}
+                <button className='content-btn'>Далее</button>
+              {mediaData && mediaData.url ? (
+                <div className='content-image'>
+                  <img src={mediaData.url} alt='Картинка из сообщения' width='146' height='259'/>
+                </div>
+              ) : null}
+            </div>
           </div>
           <div className='tags-block'>
-            <span className='new-tag'>#Новое</span>
-            <span className='expert-tag'>#Эксперт</span>
+            <span className={`tags ${is_new_message && `active-tag`}`}>#Новое</span>
+            <span className='tags'>#Эксперт</span>
           </div>
         </div>
       </li>

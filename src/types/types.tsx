@@ -1,5 +1,6 @@
 interface MediaUrls {
-    attachments: object;
+    type: string;
+    url: string;
 }
 
 export interface MessagesData {
