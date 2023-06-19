@@ -2,7 +2,7 @@ import FeedDesk from "../feed-desk/feed-desk";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <FeedDesk />
     </div>
   );

@@ -24,7 +24,7 @@ function FeedDesk() {
     return null;
   }
   return (
-    <ul>
+    <ul className='feed-desk'>
       {data.map((messageData) => (
         <FeedItem key={messageData.id} data={messageData} />
       ))}

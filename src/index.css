@@ -1,13 +1,77 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app {
+  height: 100%;
+  background-color: grey;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.feed-desk {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+.user-name {
+  color: #808080;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 13px;
+}
+.feed-item {
+  width: 886px;
+  height: 315px;
+  padding: 10px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.user-avatar {
+  margin-right: 10px;
+}
+
+.item-block {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.head-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.users-block {
+  display: flex;
+}
+
+.time-text {
+  color: #808080;
+}
+
+.control-btns-wrapper {
+  display: flex;
+}
+.control-block {
+  display: flex;
+}
+.control-button {
+  cursor: pointer;
+  padding: 10px;
+  border: 2px solid #0088ee;
+  border-radius: 2px;
+  background-color: transparent;
+  margin-right: 10px;
+}
+
+.control-text {
+  color: #0088ee;
+}
+
+.icons-block {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-right: 4px;
+}
+
+.icon-item {
+  cursor: pointer;
 }
