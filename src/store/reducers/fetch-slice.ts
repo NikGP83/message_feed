@@ -1,4 +1,4 @@
-import { MessagesData } from "../../../types/types";
+import { MessagesData } from "../../types/types";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export interface FetchData {

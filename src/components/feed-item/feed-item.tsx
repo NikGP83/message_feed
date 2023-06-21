@@ -1,6 +1,7 @@
 import { controls_buttons_name } from '../../const/const';
 import { MessagesData } from '../../types/types';
 import IconsBlock from '../icons-block/icons-block';
+import './styles.css';
 
 interface FeedItemProps {
   data: MessagesData;

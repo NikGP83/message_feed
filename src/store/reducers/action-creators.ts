@@ -1,4 +1,4 @@
-import { BASE_URL } from "../../../const/const";
+import { BASE_URL } from "../../const/const";
 import { AppDispatch } from "../store";
 import {fetchSlice} from "./fetch-slice";
 

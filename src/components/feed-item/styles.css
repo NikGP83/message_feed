@@ -1,0 +1,106 @@
+.user-name {
+    color: #808080;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 13px;
+  }
+  .feed-item {
+    width: 886px;
+    min-height: 315px;
+    padding: 10px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .user-avatar {
+    margin-right: 10px;
+  }
+  
+  .item-block {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  .head-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+  
+  .users-block {
+    display: flex;
+  }
+  
+  .time-text {
+    color: #808080;
+  }
+  
+  .control-btns-wrapper {
+    display: flex;
+  }
+  .control-block {
+    display: flex;
+  }
+  .control-button {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid #0088ee;
+    border-radius: 2px;
+    background-color: transparent;
+    margin-right: 10px;
+  }
+  
+  .control-text {
+    color: #0088ee;
+  }
+  
+  .icons-block {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-right: 4px;
+  }
+  
+  .icon-item {
+    cursor: pointer;
+  }
+  
+  .content-block {
+    display: flex;
+  }
+  
+  .time-block {
+    margin-right: 10px;
+  }
+  
+  .content-text {
+    margin-bottom: 10px;
+  }
+  
+  .tags {
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 10px;
+    color: #cdcdcd;
+    margin-right: 8px;
+  }
+  
+  .active-tag {
+    color: #0088ee;
+  }
+  
+  .content-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 8px;
+    color: #808080;
+  }
+  
+  
+  .content-image {
+    object-fit: contain;
+    border-radius: 4px;
+  }

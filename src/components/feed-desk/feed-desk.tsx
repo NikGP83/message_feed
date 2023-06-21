@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import FeedItem from '../feed-item/feed-item';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { fetchFeedData } from '../store/reducers/action-creators';
+import { fetchFeedData } from '../../store/reducers/action-creators';
 import Preloader from '../preloader/preloader';
+import './styles.css';
 
 function FeedDesk() {
   const dispatch = useAppDispatch();
@@ -17,10 +18,9 @@ function FeedDesk() {
   
   return (
     <ul className='feed-desk'>
-      {isLoading && <Preloader />}
       {data.map((messageData, i) => (
-          <FeedItem key={i} data={messageData} />
-      ))}
+        <FeedItem key={i} data={messageData} />
+        ))}
     </ul>
   );
 }
