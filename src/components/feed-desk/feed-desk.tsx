@@ -10,9 +10,11 @@ function FeedDesk() {
   useEffect(() => {
     dispatch(fetchFeedData('0'));
   }, []);
+
   if (isLoading) {
     return <Preloader />;
   }
+  
   return (
     <ul className='feed-desk'>
       {isLoading && <Preloader />}

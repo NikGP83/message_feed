@@ -214,3 +214,8 @@ body {
 .ldio-v8bd4wuksa div {
   box-sizing: content-box;
 }
+
+.content-image {
+  object-fit: contain;
+  border-radius: 4px;
+}
