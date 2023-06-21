@@ -42,8 +42,9 @@ export const useFetchData = (delay: number): MessagesData[] => {
     setInterval(() => {
       fetchData();
     }, delay);
+
   }, [feedData]);
 
-
+console.log(id)
   return feedData;
 };

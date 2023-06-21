@@ -1,6 +1,9 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import dataReducer from "./reducers/fetch-slice";
 
-const rootReducer = combineReducers({})
+const rootReducer = combineReducers({
+    dataReducer
+})
 
 export const setupStore = () => {
     return configureStore({
