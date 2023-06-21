@@ -1,6 +1,9 @@
+body {
+  background-color: grey;
+}
+
 .app {
   height: 100%;
-  background-color: grey;
 }
 
 .feed-desk {
@@ -110,4 +113,23 @@
     border: none;
     margin-bottom: 8px;
     color: #808080;
+}
+
+.feed-item-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.feed-item-enter.feed-item-enter-active {
+  opacity: 1;
+  transition: opacity 900ms, transform 900ms;
+}
+
+.feed-item-leave {
+  opacity: 1;
+}
+
+.feed-item-leave.feed-item-leave-active {
+  opacity: 0;
+  transition: opacity 800ms, transform 800ms;
 }

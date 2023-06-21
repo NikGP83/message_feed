@@ -1,38 +1,21 @@
-import { useEffect, useState } from 'react';
 import FeedItem from '../feed-item/feed-item';
-import { MessagesData } from '../../types/types';
 import { useFetchData } from '../../hooks/useFetchData';
-
-
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function FeedDesk() {
-  // const [data, setData] = useState<MessagesData[]>();
-  // const params = new FormData();
-  // params.append('actionName', 'MessagesLoad');
-
-  // const fetchData = async () => {
-  //   fetch('http://a0830433.xsph.ru/?messageId=0', {
-  //     method: 'POST',
-  //     body: params,
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => setData(data.Messages));
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-  const data = useFetchData('0', 5000)
-  console.log(data)
+  const data = useFetchData(10000);
+  console.log(data);
   if (typeof data === 'undefined') {
     return null;
   }
   return (
-    <ul className='feed-desk'>
-      {data.map((messageData) => (
-        <FeedItem key={messageData.id} data={messageData} />
+    <TransitionGroup className='feed-desk' component='ul'>
+      {data.map((messageData, i) => (
+        <CSSTransition key={i} in={true} timeout={4300} className='feed-item' unmountOnExit>
+          <FeedItem data={messageData} />
+        </CSSTransition>
       ))}
-    </ul>
+    </TransitionGroup>
   );
 }
 
