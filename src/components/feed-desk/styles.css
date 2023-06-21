@@ -6,3 +6,11 @@
     padding-top: 15px;
     padding-bottom: 5px;
   }
+
+ .feed-item {
+    width: 886px;
+    min-height: 315px;
+    padding: 10px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+  }

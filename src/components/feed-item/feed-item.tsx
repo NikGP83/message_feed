@@ -22,7 +22,7 @@ function FeedItem({ data }: FeedItemProps) {
 
   return (
     <>
-      <li className='feed-item'>
+      
         <div className='item-block'>
           <div className='head-wrapper'>
             <div className='users-block'>
@@ -93,7 +93,7 @@ function FeedItem({ data }: FeedItemProps) {
             <span className='tags'>#Эксперт</span>
           </div>
         </div>
-      </li>
+
     </>
   );
 }
