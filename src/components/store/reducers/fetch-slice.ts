@@ -11,7 +11,7 @@ export interface FetchData {
 
 const initialState:FetchData = {
     data: [],
-    isLoading: false,
+    isLoading: true,
     error: '',
     isFavorite: '',
 }

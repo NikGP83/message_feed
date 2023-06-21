@@ -7,18 +7,17 @@ import Preloader from '../preloader/preloader';
 function FeedDesk() {
   const dispatch = useAppDispatch();
   const { data, isLoading } = useAppSelector((state) => state.dataReducer);
-  // const [] = data;
   useEffect(() => {
     dispatch(fetchFeedData('0'));
   }, []);
-  console.log(data);
-  if (typeof data === 'undefined') {
-    return null;
+  if (isLoading) {
+    return <Preloader />;
   }
   return (
     <ul className='feed-desk'>
+      {isLoading && <Preloader />}
       {data.map((messageData, i) => (
-        <FeedItem key={i} data={messageData} />
+          <FeedItem key={i} data={messageData} />
       ))}
     </ul>
   );

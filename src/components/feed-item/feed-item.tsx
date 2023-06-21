@@ -1,4 +1,5 @@
 import { MessagesData } from '../../types/types';
+import Preloader from '../preloader/preloader';
 
 interface FeedItemProps {
   data: MessagesData;
@@ -18,7 +19,8 @@ function FeedItem({ data }: FeedItemProps) {
 
   const [mediaData] = attachments || [];
 
-  const is_new_message = true; 
+  const is_new_message = true;
+
 
   return (
     <>
@@ -131,22 +133,38 @@ function FeedItem({ data }: FeedItemProps) {
 
           <div className='content-block'>
             <div className='time-block'>
-              <span className='time-text'>{new Date(date).getHours() + ':' + new Date(date).getMinutes()}</span>
+              <span className='time-text'>
+                {new Date(date).getHours() + ':' + new Date(date).getMinutes()}
+              </span>
             </div>
             <div className='content-wrapper'>
-              <div className='content-text'>
-                {content}
-              </div>
-                <button className='content-btn'>Далее</button>
-              {mediaData && mediaData.url ? (
+              <div className='content-text'>{content}</div>
+              <button className='content-btn'>Далее</button>
+              {mediaData.type === 'image' && mediaData.url ? (
                 <div className='content-image'>
-                  <img src={mediaData.url} alt='Картинка из сообщения' width='146' height='259'/>
+                  <img
+                    src={mediaData.url}
+                    alt='Картинка из сообщения'
+                    width='146'
+                    height='259'
+                  />
+                </div>
+              ) : null}
+              {mediaData.type === 'video' && mediaData.url ? (
+                <div className='content-image'>
+                  <video
+                    src={mediaData.url}
+                    width='146'
+                    height='259'
+                  />
                 </div>
               ) : null}
             </div>
           </div>
           <div className='tags-block'>
-            <span className={`tags ${is_new_message && `active-tag`}`}>#Новое</span>
+            <span className={`tags ${is_new_message && `active-tag`}`}>
+              #Новое
+            </span>
             <span className='tags'>#Эксперт</span>
           </div>
         </div>
