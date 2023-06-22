@@ -34,7 +34,7 @@
   }
   .control-block {
     display: flex;
-  }
+  } 
   .control-button {
     cursor: pointer;
     padding: 10px;

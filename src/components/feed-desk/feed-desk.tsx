@@ -4,17 +4,17 @@ import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { fetchFeedData } from '../../store/reducers/action-creators';
 import { motion } from 'framer-motion';
 import { getNewId } from '../../utils/utils';
-import { MessagesData } from '../../types/types';
 import { framerMotionAnimateSettings } from '../../const/const';
 import './styles.css';
 
 function FeedDesk() {
   const dispatch = useAppDispatch();
   const [id, setNewId] = useState('');
-  const [state, setState] = useState<MessagesData[]>([]);
   const { data, isLoading, isFirstTime } = useAppSelector(
     (state) => state.dataReducer
   );
+
+  console.log(data)
 
   useEffect(() => {
     if (isFirstTime) {
@@ -52,6 +52,7 @@ function FeedDesk() {
           animate='visible'
           className='feed-item'
           custom={i}
+          transition={{ duration: 0.5 }}
         >
           <FeedItem key={i} data={messageData} />
         </motion.li>
