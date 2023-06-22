@@ -9,7 +9,7 @@ export const fetchFeedData = (id: string) => async (dispatch: AppDispatch) => {
     try {
         dispatch(fetchSlice.actions.dataFetching());
         dispatch(fetchSlice.actions.firstRequestData());
-        const response = await fetch(`${BASE_URL.url}?messageId=${id}`, {
+        const response = await fetch(`${BASE_URL.url}?messageId=${id}/`, {
             method: 'POST',
             body: params,
           })
