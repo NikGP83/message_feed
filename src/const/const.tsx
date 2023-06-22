@@ -7,3 +7,13 @@ export const controls_buttons_name = {
     button_center: 'Центр',
     button_right: 'Правый',
 }
+
+export const framerMotionAnimateSettings = {
+    visible: (i: number) => ({
+      opacity: 1,
+      transition: {
+        delay: i * 0.1,
+      },
+    }),
+    hidden: { opacity: 0.3 },
+  };
