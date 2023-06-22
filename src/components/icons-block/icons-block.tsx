@@ -1,6 +1,10 @@
 import React from 'react'
 
-function IconsBlock() {
+interface IconProps {
+  id: string;
+}
+
+function IconsBlock({id}: IconProps) {
   return (
     <ul className='icons-block'>
     <li className='icon-item'>

@@ -13,11 +13,14 @@ function FeedItem({ data }: FeedItemProps) {
     author,
     content,
     date,
+    id,
   } = data;
 
   const [mediaData] = attachments || [];
 
   const is_new_message = true;
+
+
 
 
   return (
@@ -50,7 +53,7 @@ function FeedItem({ data }: FeedItemProps) {
                   <span className='control-text'>{controls_buttons_name.button_right}</span>
                 </button>
               </div>
-                <IconsBlock />
+                <IconsBlock id={id}/>
             </div>
           </div>
 
